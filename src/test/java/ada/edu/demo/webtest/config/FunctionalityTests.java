@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -47,5 +48,20 @@ public class FunctionalityTests {
         List<Student> students = studentService.getStudentByEitherName("Jamal","Aliyev");
         System.out.printf("Found students: "+students.size());
         assertEquals(2, students.size() );
+    }
+    @Test
+    @DisplayName("Update Student Details")
+    public void testUpdateStudentDetails() {
+        Student now = new Student(1, "Turalito", "Alizato", "talito@email.com", new Date(), null, null);
+        Student update = new Student(12103, "Tural", "Alizada", "talizada12103@ada.edu.az", new Date(), null, null);
+
+        lenient().when(studentRepository.findById(1)).thenReturn(Optional.of(now));
+        lenient().when(studentRepository.save(update)).thenReturn(update);
+
+        Student expected = studentService.saveStudent(update);
+        assertNotNull(expected);
+        assertEquals("Tural", expected.getFirstName());
+        assertEquals("Alizada", expected.getLastName());
+        assertEquals("talizada12103@ada.edu.az", expected.getEmail());
     }
 }
