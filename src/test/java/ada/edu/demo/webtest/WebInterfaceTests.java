@@ -94,11 +94,11 @@ class WebInterfaceTests {
 		try {
 			studentIdInput.sendKeys("3");
 			Thread.sleep(2000);
-			firstNameInput.sendKeys("Yumito");
+			firstNameInput.sendKeys("Kamil");
 			Thread.sleep(2000);
-			lastNameInput.sendKeys("Karato");
+			lastNameInput.sendKeys("Aliyev");
 			Thread.sleep(2000);
-			emailInput.sendKeys("yumka@ada.edu.az");
+			emailInput.sendKeys("kali@ada.edu.az");
 			Thread.sleep(2000);
 		}
 		catch (Exception ex) {
@@ -118,19 +118,15 @@ class WebInterfaceTests {
 		// Find all the course checkboxes
 		List<WebElement> courseCheckboxes = webDriver.findElements(By.name("courses"));
 
-		// Check if checkboxes are found
 		assertNotNull(courseCheckboxes);
 		Assertions.assertFalse(courseCheckboxes.isEmpty(), "No course checkboxes found.");
 
-		// Select all courses by clicking on each checkbox
 		for (WebElement checkbox : courseCheckboxes) {
 			if (!checkbox.isSelected()) {
 				checkbox.click();
 			}
 		}
-
-		// Submit the form, change to a more general approach in case the ID is not correct
-		WebElement saveButton = webDriver.findElement(By.cssSelector("input[type='submit'],button[type='submit']"));
+		WebElement saveButton = webDriver.findElement(By.id("submit"));
 		assertNotNull(saveButton, "Save button not found.");
 		saveButton.click();
 	}
