@@ -43,7 +43,7 @@ class WebInterfaceTests {
 			Thread.sleep(2000);
 			lastNameInput.sendKeys("Alizada");
 			Thread.sleep(2000);
-			emailInput.sendKeys("ta@ada.edu.az");
+			emailInput.sendKeys("talizada12103@ada.edu.az");
 			Thread.sleep(2000);
 		}
 		catch (Exception ex) {
