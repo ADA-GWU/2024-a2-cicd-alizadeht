@@ -71,7 +71,7 @@ class WebInterfaceTests {
 			throw new RuntimeException(e);
 		}
 
-		// Check if the text "Jamal" is present in the page content
+		// Check if the text "Tural" is present in the page content
 		assert(bodyElementFName.size() == 1);
 		assert(bodyElementLName.size() == 1);
 	}
