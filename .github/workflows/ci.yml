@@ -21,10 +21,5 @@ jobs:
         run: mvn -B package --file pom.xml
       - name: Test with Maven
         run: mvn test
-      - name: Upload Surefire Reports
-        if: failure() # This ensures the step runs only if the previous steps failed.
-        uses: actions/upload-artifact@v2
-        with:
-          name: surefire-reports
-          path: target/surefire-reports
+
 
