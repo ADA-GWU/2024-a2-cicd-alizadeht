@@ -36,14 +36,6 @@ Start the testing
 
 
 
-## Additional info about Github Actions
-
-```bash
-  https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions
-```
-## Author
-
-- [@alizadeht](https://github.com/alizadeht)
 
 
 
@@ -67,3 +59,15 @@ Start the testing
 #### 3. Update Student With Courses
 
 P.S: Web Interface Tests are configured with Chrome, and headless.
+
+
+
+## Additional info about Github Actions
+
+```bash
+  https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions
+```
+## Author
+
+- [@alizadeht](https://github.com/alizadeht)
+
