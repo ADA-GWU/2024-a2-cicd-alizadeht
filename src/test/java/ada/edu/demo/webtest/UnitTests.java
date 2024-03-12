@@ -4,23 +4,13 @@ import ada.edu.demo.webtest.entity.Course;
 import ada.edu.demo.webtest.entity.Student;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 class UnitTests {
 
-	@Autowired
-	private WebDriver webDriver;
-
-	@Test
+    @Test
 	@DisplayName("The number of courses shall correspond to the added courses")
 	void testTotalCourses() {
 		List<Course> courseList = new ArrayList<>();
